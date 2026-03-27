@@ -2,7 +2,7 @@
 	"name": "hallm",
 	"version": "0.0.1",
 	"private": true,
-	"description": "The AI Tools For Humans",
+	"description": "The AI Tools For Hoomans",
 	"workspaces": [
 		"apps/*",
 		"packages/*"
@@ -12,18 +12,19 @@
 		"dev": "turbo dev",
 		"lint": "turbo lint",
 		"format": "turbo format",
-		"typecheck": "turbo typecheck",
-		"check": "ultracite check",
-		"fix": "ultracite fix",
-		"prepare": "lefthook install"
+		"typecheck": "turbo typecheck"
+	},
+	"type": "module",
+	"dependencies": {
+		"tsup": "^8.5.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.7",
 		"@hallm/tsconfig": "workspace:*",
-		"lefthook": "^2.1.4",
+		"@types/bun": "latest",
+		"oxfmt": "^0.42.0",
+		"oxlint": "^1.57.0",
 		"turbo": "^2.8.17",
-		"typescript": "5.9.3",
-		"ultracite": "7.3.2"
+		"typescript": "5.9.3"
 	},
 	"packageManager": "bun@1.3.11"
 }

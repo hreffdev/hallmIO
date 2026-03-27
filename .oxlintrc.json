@@ -1,0 +1,22 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"extends": [
+		"./packages/cli/config/core/.oxlintrc.json",
+		"./packages/cli/config/react/.oxlintrc.json",
+		"./packages/cli/config/next/.oxlintrc.json"
+	],
+	"ignorePatterns": [
+		"packages/ui/components/*.tsx",
+		"packages/ui/lib/utils.ts",
+		"packages/ui/hooks/*.ts",
+		"apps/web/components/ai-elem",
+		"apps/web/components/*.tsx",
+		"apps/web/lib/utils.ts",
+		"apps/web/hooks/*.ts",
+		"test"
+	],
+	"rules": {
+		"max-statements": "off",
+		"complexity": "off"
+	}
+}

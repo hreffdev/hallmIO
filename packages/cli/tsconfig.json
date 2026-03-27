@@ -1,0 +1,13 @@
+{
+  "extends": "@hallm/tsconfig/base.json",
+  "forceConsistentCasingInFileNames": true,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@hallm/cli/*": ["./src/*"]
+    },
+    "strictNullChecks": true
+  },
+  "include": ["."],
+  "exclude": ["node_modules", "dist"]
+}
