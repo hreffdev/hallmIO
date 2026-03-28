@@ -14,7 +14,7 @@ import {
 	SourcesContent,
 	SourcesTrigger,
 } from 'components/fumadocs/ai/sources'
-import { Spinner } from '@/components/ui/spinner'
+import { Spinner } from "@hallm/ui/components/base/spinner"
 
 interface MessageMetadataProps {
 	parts: MyUIMessage['parts']

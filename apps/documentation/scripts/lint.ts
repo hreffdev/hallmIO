@@ -1,4 +1,4 @@
-import type { InferPageType } from 'fumadocs-core/source'
+import type { InferPageType, PageData } from 'fumadocs-core/source'
 import {
 	type FileObject,
 	printErrors,
@@ -44,7 +44,7 @@ async function checkLinks() {
 async function getHeadings({
 	data,
 }: InferPageType<AnySource>): Promise<string[]> {
-	const { _exports, toc } = await data.load()
+	const { _exports, toc } = await data()
 	const headings = toc.map((item) => item.url.slice(1))
 	const elementIds = _exports?.elementIds
 	if (Array.isArray(elementIds)) {
@@ -64,7 +64,7 @@ async function getFiles(docsSource: AnySource) {
 		files.push({
 			data: page.data,
 			url: page.url,
-			path: page.data.info.fullPath,
+			path: page.data.fullPath,
 			content: await page.data.getText('raw'),
 		})
 	}

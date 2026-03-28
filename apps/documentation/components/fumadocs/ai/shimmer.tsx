@@ -8,7 +8,7 @@ import {
   memo,
   useMemo,
 } from 'react'
-import { cn } from '@/lib/cn'
+import { cn } from '@hallm/ui/lib/utils'
 
 export interface TextShimmerProps {
   children: string

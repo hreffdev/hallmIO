@@ -1,4 +1,5 @@
-import { docs } from 'fumadocs-mdx:collections/server'
+import { docs } from "fumadocs-mdx::"
+
 import {
   type InferMetaType,
   type InferPageType,
@@ -6,7 +7,7 @@ import {
   loader,
 } from 'fumadocs-core/source'
 import { lucideIconsPlugin } from 'fumadocs-core/source/lucide-icons'
-import { openapiPlugin } from 'fumadocs-openapi/server'
+import { openapiPlugin } from "fumadocs-openapi/server"
 
 const CODE_TAG_NAME = /^<\w+ \/>$/
 

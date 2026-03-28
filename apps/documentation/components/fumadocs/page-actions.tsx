@@ -1,4 +1,5 @@
 'use client'
+
 import { cva } from 'class-variance-authority'
 import { buttonVariants } from 'fumadocs-ui/components/ui/button'
 import {
@@ -15,7 +16,7 @@ import {
 	MessageCircleIcon,
 } from 'lucide-react'
 import { useMemo, useState } from 'react'
-import { cn } from '@hallm/ui/lib'
+import { cn } from '@hallm/ui/lib/utils'
 
 const cache = new Map<string, string>()
 

@@ -1,8 +1,8 @@
 'use client'
 
 import type { ReactNode } from 'react'
-import { Badge } from '@hallm/ui/badge'
-import { cn } from '@/hallm/ui/lib'
+import { Badge } from "@hallm/ui/components/base/badge"
+import { cn } from '@hallm/ui/lib/utils'
 
 export interface UpdatesProps {
 	children: ReactNode

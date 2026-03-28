@@ -1,12 +1,12 @@
 {
 	"extends": "@hallm/tsconfig/nextjs.json",
-	"target": "ESNext",
-	"lib": [
-		"dom",
-		"dom.iterable",
-		"esnext"
-	],
 	"compilerOptions": {
+		"target": "ESNext",
+		"lib": [
+			"dom",
+			"dom.iterable",
+			"esnext"
+		],
 		"baseUrl": ".",
 		"paths": {
 			"@/*": [

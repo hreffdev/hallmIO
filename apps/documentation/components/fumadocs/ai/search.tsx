@@ -24,7 +24,7 @@ import {
 	useState,
 } from 'react'
 import type { MyUIMessage } from 'app/api/chat/types'
-import { cn } from '@/lib/cn'
+import { cn } from "@hallm/ui/lib/utils"
 import { Markdown } from './markdown'
 import { MessageMetadata } from './message-metadata'
 
@@ -327,7 +327,7 @@ export function AISearchTrigger() {
 				buttonVariants({
 					variant: 'secondary',
 				}),
-				'fixed end-4 bottom-4 z-20 w-24 gap-3 rounded-2xl text-fd-muted-foreground shadow-lg transition-all',
+				'fixed inset-e-4 bottom-4 z-20 w-24 gap-3 rounded-2xl text-fd-muted-foreground shadow-lg transition-all',
 				open && 'translate-y-10 opacity-0'
 			)}
 			onClick={() => setOpen(true)}

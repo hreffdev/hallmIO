@@ -12,13 +12,13 @@ import {
 } from 'lucide-react'
 import type { ComponentProps, ReactNode } from 'react'
 import { isValidElement } from 'react'
-import { Badge } from '@/components/ui/badge'
+import { Badge } from '@hallm/ui/components/base/badge'
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from '@/components/ui/collapsible'
-import { cn } from '@/lib/cn'
+} from '@hallm/ui/components/base/collapsible"
+import { cn } from "@hallm/ui/lib/utils"
 
 export type ToolProps = ComponentProps<typeof Collapsible>
 

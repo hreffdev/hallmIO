@@ -1,32 +1,8 @@
-'use client'
-
-import type { Item, Node } from 'fumadocs-core/page-tree'
-import { useDocsSearch } from 'fumadocs-core/search/client'
-import {
-	SearchDialog,
-	SearchDialogClose,
-	SearchDialogContent,
-	SearchDialogFooter,
-	SearchDialogHeader,
-	SearchDialogIcon,
-	SearchDialogInput,
-	SearchDialogList,
-	SearchDialogOverlay,
-	type SearchItemType,
-	type SharedProps,
-} from 'fumadocs-ui/components/dialog/search'
-import { buttonVariants } from 'fumadocs-ui/components/ui/button'
-import {
-	Popover,
-	PopoverContent,
-	PopoverTrigger,
-} from 'fumadocs-ui/components/ui/popover'
-import { useTreeContext } from 'fumadocs-ui/contexts/tree'
-import { ArrowRight, ChevronDown } from 'lucide-react'
-import { useRouter } from 'next/navigation'
-import { useMemo, useState } from 'react'
-import { cn } from '@/hallm/ui/lib'
-import { tags } from 'lib/constants'
+import { useState, useMemo } from 'react'
+import { tags } from '../lib/constants'
+import { useTreeContext } from 'fumadocs-ui/contexts/tree';
+import { useRouter } from 'next/router';
+import { useDocsSearch } from 'fumadocs-core/search/client';
 
 export default function CustomSearchDialog(props: SharedProps) {
 	const [open, setOpen] = useState(false)
@@ -41,11 +17,11 @@ export default function CustomSearchDialog(props: SharedProps) {
 		const map = new Map<string, Item>()
 
 		function onNode(node: Node) {
-			if (node.type === 'page' && typeof node.name === 'string') {
-				map.set(node.name.toLowerCase(), node)
-			} else if (node.type === 'folder') {
-				if (node.index) {
-					onNode(node.index)
+			if (node === 'page' && typeof node === 'string') {
+				map.set(node.toLowerCase(), node)
+			} else if (node === 'folder') {
+				if (node) {
+					onNode(node)
 				}
 				for (const item of node.children) {
 					onNode(item)
