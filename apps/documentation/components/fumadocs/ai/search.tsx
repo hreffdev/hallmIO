@@ -395,7 +395,7 @@ export function AISearchPanel() {
 					className={cn(
 						'z-30 overflow-hidden bg-fd-popover text-fd-popover-foreground',
 						'max-lg:fixed max-lg:inset-x-2 max-lg:top-4 max-lg:rounded-2xl max-lg:border max-lg:shadow-xl',
-						'fixed inset-y-2 z-30 flex flex-col rounded-2xl border bg-fd-popover text-fd-popover-foreground shadow-xl max-sm:inset-x-2 sm:end-2 sm:w-[460px]',
+						'fixed inset-y-2 z-30 flex flex-col rounded-2xl border bg-fd-popover text-fd-popover-foreground shadow-xl max-sm:inset-x-2 sm:inset-e-2 sm:w-115',
 						open ? 'animate-fd-dialog-in' : 'animate-fd-dialog-out'
 					)}
 				>

@@ -33,9 +33,9 @@ export function Update({ children, label, id, className }: UpdateProps) {
 			)}
 			id={updateId}
 		>
-			<div className='group top-[112px] flex w-full flex-shrink-0 flex-col items-start justify-start lg:sticky lg:w-[160px]'>
+			<div className='group top-28 flex w-full shrink-0 flex-col items-start justify-start lg:sticky lg:w-40'>
 				<Badge
-					className='h-fit flex-grow-0 rounded-lg px-2 py-1 text-sm'
+					className='h-fit grow-0 rounded-lg px-2 py-1 text-sm'
 					variant='secondary'
 				>
 					{label}

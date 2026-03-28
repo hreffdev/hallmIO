@@ -4,6 +4,9 @@
   "workspaces": {
     "": {
       "name": "hallm",
+      "dependencies": {
+        "@radix-ui/react-presence": "^1.1.5",
+      },
       "devDependencies": {
         "@hallm/tsconfig": "workspace:*",
         "@types/bun": "catalog:types",

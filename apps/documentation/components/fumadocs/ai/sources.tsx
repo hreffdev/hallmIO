@@ -6,8 +6,8 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from '@/components/ui/collapsible'
-import { cn } from '@/lib/cn'
+} from '@hallm/ui/components/base/collapsible'
+import { cn } from '@hallm/ui/lib/utils'
 
 export type SourcesProps = ComponentProps<'div'>
 
