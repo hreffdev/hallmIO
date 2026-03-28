@@ -14,8 +14,7 @@
     "components": "@/components",
     "hooks": "@/hooks",
     "lib": "@/lib",
-    "utils": "@hallm/ui/lib/utils",
-    "ui": "@hallm/ui/components"
+    "utils": "@hallm/ui/lib/utils"
   },
   "rtl": false,
   "menuColor": "default-translucent",

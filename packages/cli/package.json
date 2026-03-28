@@ -12,14 +12,6 @@
 		"commander": "^14.0.3",
 		"jsonc-parser": "^3.3.1"
 	},
-	"peerDependencies": {
-		"oxlint": "^1.0.0"
-	},
-	"peerDependenciesMeta": {
-		"oxlint": {
-			"optional": true
-		}
-	},
 	"devDependencies": {
 		"tsup": "^8.5.1"
 	},

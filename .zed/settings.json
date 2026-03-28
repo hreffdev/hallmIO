@@ -1,3 +1,13 @@
 {
-  "always_treat_brackets_as_autoclosed": true
+	"allow_rewrap": "in_selections",
+	"document_symbols": "on",
+	"document_folding_ranges": "on",
+	"semantic_tokens": "combined",
+	"completions": {
+		"lsp_fetch_timeout_ms": 20,
+		"words": "enabled",
+	},
+	"soft_wrap": "editor_width",
+	"project_name": "hallmio",
+	"always_treat_brackets_as_autoclosed": true,
 }

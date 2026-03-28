@@ -1,8 +1,9 @@
 {
-	"name": "hallm",
+	"name": "hallm-io",
 	"version": "0.0.1",
 	"private": true,
 	"description": "The AI Tools For Hoomans",
+	"type": "module",
 	"workspaces": [
 		"apps/*",
 		"packages/*"
@@ -16,7 +17,6 @@
 		"format": "turbo format",
 		"typecheck": "turbo typecheck"
 	},
-	"type": "module",
 	"devDependencies": {
 		"@hallm/tsconfig": "workspace:*",
 		"@types/bun": "catalog:types",
