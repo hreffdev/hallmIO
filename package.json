@@ -22,7 +22,7 @@
 		"typescript": "catalog:types"
 	},
 	"packageManager": "bun@1.3.11",
-	"catalog": {
+	"catalogs": {
 		"react": {
 			"react": "^19.0.0",
 			"react-dom": "^19.0.0"
