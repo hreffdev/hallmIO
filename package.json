@@ -15,16 +15,35 @@
 		"typecheck": "turbo typecheck"
 	},
 	"type": "module",
-	"dependencies": {
-		"tsup": "^8.5.1"
-	},
 	"devDependencies": {
 		"@hallm/tsconfig": "workspace:*",
-		"@types/bun": "latest",
-		"oxfmt": "^0.42.0",
-		"oxlint": "^1.57.0",
+		"@types/bun": "catalog:types",
 		"turbo": "^2.8.17",
-		"typescript": "5.9.3"
+		"typescript": "catalog:types"
 	},
-	"packageManager": "bun@1.3.11"
+	"packageManager": "bun@1.3.11",
+	"catalog": {
+		"react": {
+			"react": "^19.0.0",
+			"react-dom": "^19.0.0"
+		},
+		"ui": {
+			"@base-ui/react": "^1.3.0",
+			"class-variance-authority": "^0.7.1",
+			"clsx": "^2.1.1",
+			"lucide-react": "^1.7.0",
+			"shadcn": "^4.1.1",
+			"tailwindcss": "^4.1.18",
+			"@tailwindcss/postcss": "^4.1.18",
+			"tailwind-merge": "^3.5.0",
+			"tw-animate-css": "^1.4.0"
+		},
+		"types": {
+			"typescript": "^5.9.3",
+			"@types/bun": "latest",
+			"@types/node": "^25.1.0",
+			"@types/react": "^19.2.10",
+			"@types/react-dom": "^19.2.3"
+		}
+	}
 }

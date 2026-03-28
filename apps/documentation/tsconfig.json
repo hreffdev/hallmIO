@@ -1,0 +1,39 @@
+{
+	"extends": "@hallm/tsconfig/nextjs.json",
+	"target": "ESNext",
+	"lib": [
+		"dom",
+		"dom.iterable",
+		"esnext"
+	],
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": [
+				"./src/*"
+			],
+			"fumadocs-mdx:collections/*": [
+				".source/*"
+			]
+		},
+		"plugins": [
+			{
+				"name": "next"
+			}
+		],
+		"ignoreDeprecations": "5.0",
+		"strictNullChecks": true
+	},
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.mts",
+		"**/*.tsx",
+		".next/types/**/*.ts",
+		".next/dev/types/**/*.ts",
+		"next.config.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

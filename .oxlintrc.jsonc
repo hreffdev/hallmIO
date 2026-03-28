@@ -1,5 +1,5 @@
 {
-	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"extends": [
 		"./packages/cli/config/core/.oxlintrc.json",
 		"./packages/cli/config/react/.oxlintrc.json",
