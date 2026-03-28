@@ -7,7 +7,7 @@
 		"build": "bun run build:pre && next build && bun run build:post",
 		"build:pre": "bun ./scripts/pre-build.ts",
 		"build:post": "bun ./scripts/post-build.ts",
-		"dev": "next dev --turbopack --port 3031",
+		"dev": "next dev --turbopack --port 3002",
 		"start": "next start",
 		"postinstall": "fumadoc-mdx",
 		"typegen": "fumadocs-mdx && next typegen",

@@ -1,13 +1,9 @@
-import { fileURLToPath } from 'node:url'
+
 import bundleAnalyzer from '@next/bundle-analyzer'
 import { createMDX } from 'fumadocs-mdx/next'
 import type { NextConfig } from 'next'
 
 async function createNextConfig(): Promise<NextConfig> {
-	const { createJiti } = await import('jiti')
-	const jiti = createJiti(fileURLToPath(import.meta.url))
-
-	await jiti.import('./src/env')
 
 	const nextConfig: NextConfig = {
 		reactStrictMode: true,
@@ -34,7 +30,7 @@ async function createNextConfig(): Promise<NextConfig> {
 				},
 				{
 					protocol: 'https',
-					hostname: 'fumadocs.dev',
+					hostname: 'hreff.dev',
 					port: '',
 				},
 			],

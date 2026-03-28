@@ -11,13 +11,13 @@ import lastModified from "fumadocs-mdx/plugins/last-modified";
 import { z } from "zod";
 
 // lib/shiki.ts
-import { configDefault } from "fumadocs-core/highlight";
+import { configDefault } from "fumadocs-core/highlight/config";
 var shikiConfig = {
   ...configDefault,
   defaultThemes: {
     themes: {
       light: "github-light",
-      dark: "vesper"
+      dark: "tokyonight"
     }
   }
 };

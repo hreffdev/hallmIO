@@ -8,8 +8,9 @@
 		"packages/*"
 	],
 	"scripts": {
-		"build": "turbo build",
-		"dev": "turbo dev",
+		"build:ui": "turbo build",
+		"dev:web": "turbo dev --web --port 3031",
+		"dev:documetation": "turbo dev ",
 		"lint": "turbo lint",
 		"format": "turbo format",
 		"typecheck": "turbo typecheck"
