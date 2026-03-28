@@ -2,12 +2,12 @@ import { BookIcon, type LucideIcon, WebhookIcon } from 'lucide-react'
 import type { LinkProps } from 'next/link'
 import Link from 'next/link'
 import type { ReactElement, ReactNode } from 'react'
-import { cn } from '@/lib/cn'
+import { cn } from '@hallm/ui/lib/utils'
 
 export default function DocsPage(): ReactElement {
   return (
-    <main className='mx-auto flex w-full max-w-[1400px] flex-col px-4 py-16'>
-      <h1 className='font-semibold text-2xl md:text-3xl'>Fumadocs Starter</h1>
+    <main className='mx-auto flex w-full max-w-350 flex-col px-4 py-16'>
+      <h1 className='font-semibold text-2xl md:text-3xl'>Official Docs for HallmIO</h1>
       <p className='mt-1 text-fd-muted-foreground text-lg'>
         A starter-template for Fumadocs.
       </p>

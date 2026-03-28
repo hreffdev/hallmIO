@@ -11,9 +11,15 @@ import lastModified from "fumadocs-mdx/plugins/last-modified";
 import { z } from "zod";
 
 // lib/shiki.ts
-import { configDefault } from "fumadocs-core/highlight/config";
+import * as highlight from "fumadocs-core/highlight";
+// Normalize possible export shapes from fumadocs-core/highlight (named exports or default)
+var _configDefault =
+  (highlight).configDefault ??
+  (highlight).config ??
+  (highlight).default ??
+  highlight;
 var shikiConfig = {
-  ...configDefault,
+  ..._configDefault,
   defaultThemes: {
     themes: {
       light: "github-light",

@@ -1,4 +1,4 @@
-import { Button } from "@hallm/ui/components/button"
+import { Button } from "@hallm/ui/components/base/button"
 
 export default function Page() {
   return (

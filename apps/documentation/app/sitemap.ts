@@ -1,14 +1,15 @@
 import type { MetadataRoute } from 'next'
 import { source } from 'lib/source'
 import { url } from 'lib/url'
+import { undefined } from 'zod/v3'
 
 export const revalidate = false
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const items = await Promise.all(
-    source.getPages().map(async (page) => {
-      const { lastModified } = await page.data.load()
-
+	const items = await Promise.all(
+		source.getPages().map(async (page) => {
+			const { lastModified } = page.data.description ?
+				}),
       return {
         url: url(page.url),
         lastModified: lastModified ? new Date(lastModified) : undefined,

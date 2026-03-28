@@ -1,9 +1,11 @@
 import { HomeLayout } from 'fumadocs-ui/layouts/home'
-import { baseOptions, linkItems } from 'lib/layout.shared'
+import { baseOptions, linkItems } from "../../lib/layout.shared"
+import { ReactNode } from 'react'
 
-export default function Layout({ children }: LayoutProps<'/'>) {
+
+
+export default function Layout({ children }: { children: ReactNode }) {
 	const base = baseOptions()
-
 	return (
 		<HomeLayout
 			{...base}
@@ -11,10 +13,10 @@ export default function Layout({ children }: LayoutProps<'/'>) {
 			style={
 				{
 					'--spacing-fd-container': '1300px',
-				} as object
+				} as React.CSSProperties
 			}
 		>
-			{children}
+		<div>{children}</div>
 			<Footer />
 		</HomeLayout>
 	)

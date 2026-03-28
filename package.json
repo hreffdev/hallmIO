@@ -9,8 +9,9 @@
 	],
 	"scripts": {
 		"build:ui": "turbo build",
+		"dev": "turbo dev",
 		"dev:web": "turbo dev --web --port 3031",
-		"dev:documetation": "turbo dev ",
+		"dev:documentation": "turbo dev",
 		"lint": "turbo lint",
 		"format": "turbo format",
 		"typecheck": "turbo typecheck"
@@ -46,8 +47,5 @@
 			"@types/react": "^19.2.10",
 			"@types/react-dom": "^19.2.3"
 		}
-	},
-	"dependencies": {
-		"@radix-ui/react-presence": "^1.1.5"
 	}
 }

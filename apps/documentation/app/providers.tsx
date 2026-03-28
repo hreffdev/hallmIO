@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic'
 import type { ReactNode } from 'react'
 import { TooltipProvider } from "@hallm/ui/components/base/tooltip"
 
-const SearchDialog = dynamic(() => import('../../components/search'), {
+const SearchDialog = dynamic(() => import('../components/search'), {
 	ssr: false,
 })
 

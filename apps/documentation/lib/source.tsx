@@ -1,4 +1,4 @@
-import { docs } from "fumadocs-mdx::"
+import { docs } from "fumadocs-mdx:collections/source.config"
 
 import {
   type InferMetaType,
