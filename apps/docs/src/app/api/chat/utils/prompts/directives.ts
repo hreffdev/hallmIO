@@ -9,7 +9,7 @@ export const directivesPrompt = `
 <directive name="accuracy">
 - Only provide information you are certain is correct.
 - Never invent, assume, or extrapolate.
-- If documentation does not contain the answer, say "I don't know."
+- If documentation does not contain the answer, say "I don"t know."
 - When citing inline, use numbered references like [1](/docs/changelog).
 </directive>
 
@@ -28,7 +28,7 @@ export const directivesPrompt = `
 2. If unclear, ask a short clarifying question.
 3. Use \`searchDocs\` to discover relevant pages.
 4. Retrieve content using \`getPageContent\`.
-5. If the docs are incomplete or missing info, respond with "I don't know."
+5. If the docs are incomplete or missing info, respond with "I don"t know."
 6. Summarize verified content concisely.
 </directive>
 

@@ -1,11 +1,11 @@
-import { tool, type UIMessageStreamWriter } from 'ai'
-import { initAdvancedSearch } from 'fumadocs-core/search/server'
-import { z } from 'zod'
-import { categories } from 'lib/constants'
-import { source } from 'lib/source'
+import { tool, type UIMessageStreamWriter } from "ai"
+import { initAdvancedSearch } from "fumadocs-core/search/server"
+import { z } from "zod"
+import { categories } from "lib/constants"
+import { source } from "lib/source"
 
 const server = initAdvancedSearch({
-  language: 'english',
+  language: "english",
   indexes: async () => {
     const pages = source.getPages()
     const indexes = await Promise.all(
@@ -17,7 +17,7 @@ const server = initAdvancedSearch({
           description: page.data.description,
           structuredData: structuredData ?? undefined,
           url: page.url,
-          tag: page.path.split('/')[0],
+          tag: page.path.split("/"")[0],
         }
       })
     )
@@ -26,22 +26,22 @@ const server = initAdvancedSearch({
 })
 
 const Tag = z.union([
-  z.literal('all'),
+  z.literal("all"),
   ...Object.keys(categories).map((key) => z.literal(key)),
 ])
 
 export const createSearchDocsTool = (writer: UIMessageStreamWriter) =>
   tool({
-    description: 'Search the documentation using the internal search server.',
+    description: "Search the documentation using the internal search server."",
     inputSchema: z.object({
-      query: z.string().describe('The query to search for.'),
-      tag: Tag.default('all').describe(
-        'Optional tag filter, e.g. a top-level section.'
+      query: z.string().describe("The query to search for.""),
+      tag: Tag.default("all").describe(
+        "Optional tag filter, e.g. a top-level section.""
       ),
       locale: z
         .string()
         .optional()
-        .describe('Optional locale for i18n setups.'),
+        .describe("Optional locale for i18n setups.""),
       limit: z
         .number()
         .int()
@@ -49,11 +49,11 @@ export const createSearchDocsTool = (writer: UIMessageStreamWriter) =>
         .max(50)
         .default(10)
         .describe(
-          'Maximum number of results to return (default: 10, max: 50).'
+          "Maximum number of results to return (default: 10, max: 50).""
         ),
     }),
     execute: async ({ query, tag: tagParam, locale, limit }) => {
-      const tag = tagParam === 'all' ? undefined : tagParam
+      const tag = tagParam === "all" ? undefined : tagParam
       const results = await server.search(query, {
         tag,
         locale,
@@ -82,7 +82,7 @@ export const createSearchDocsTool = (writer: UIMessageStreamWriter) =>
       trimmed.forEach((doc, index) => {
         const title = doc.pageTitle ?? doc.url
         writer.write({
-          type: 'source-url',
+          type: "source-url",
           sourceId: `search-doc-${index}-${doc.url}`,
           url: doc.url,
           title,
@@ -98,10 +98,10 @@ export const createSearchDocsTool = (writer: UIMessageStreamWriter) =>
           const title = doc.pageTitle ?? doc.url
           const description = doc.pageDescription
             ? ` — ${doc.pageDescription}`
-            : ''
+            : ""
           return `${index + 1}. ${title} (${doc.url})${description}`
         })
-        .join('\n')
+        .join("\n")
 
       return `Found ${trimmed.length} documentation pages for "${query}":\n${summary}`
     },

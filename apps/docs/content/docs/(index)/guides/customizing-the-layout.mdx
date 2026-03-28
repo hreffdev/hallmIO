@@ -1,6 +1,6 @@
 ---
 title: Customizing the Layout
-description: 'Learn how to customize the layout of your documentation'
+description: "Learn how to customize the layout of your documentation"
 icon: PanelLeft
 ---
 
@@ -14,22 +14,22 @@ There are two main ways to customize the layout of your documentation:
 
 ## 1. Using Built-in Layouts
 
-Fumadocs provides ready-to-use layouts. Let's go through them.
+Fumadocs provides ready-to-use layouts. Let"s go through them.
 
 ### 1.1. Docs Layout
 
 ![Docs Layout](/docs/docs.png)
 
-The **Docs Layout** is the default option.  
-It's a clean, simple layout optimized for technical documentation.
+The **Docs Layout** is the default option.
+It"s a clean, simple layout optimized for technical documentation.
 
 To use this layout, update your `layout.tsx` file in `src/app/docs/layout.tsx`:
 
 ```tsx
-import { DocsLayout } from 'fumadocs-ui/layouts/docs'
+import { DocsLayout } from "fumadocs-ui/layouts/docs"
 ```
 
-> **Note:** If you've been using the Notebook Layout, make sure to remove its configuration from `layout.tsx` before switching to Docs Layout.
+> **Note:** If you"ve been using the Notebook Layout, make sure to remove its configuration from `layout.tsx` before switching to Docs Layout.
 
 ### 1.2. Notebook Layout
 
@@ -47,10 +47,10 @@ It supports three different design modes:
 * The sidebar combines both navigation sections (like *Setup, Writing, UI*) and the context switcher in a single column.
 
 ```tsx title="layout.tsx"
-import { DocsLayout } from 'fumadocs-ui/layouts/notebook'; // [!code highlight]
-import { baseOptions } from '@/lib/layout.shared';
-import { source } from '@/lib/source';
-import type { ReactNode } from 'react';
+import { DocsLayout } from "fumadocs-ui/layouts/notebook"; // [!code highlight]
+import { baseOptions } from "@/lib/layout.shared";
+import { source } from "@/lib/source";
+import type { ReactNode } from "react";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -70,10 +70,10 @@ export default function Layout({ children }: { children: ReactNode }) {
 * The sidebar remains dedicated to page-level navigation, while the top tabs control context switching.
 
 ```tsx title="layout.tsx"
-import { DocsLayout } from 'fumadocs-ui/layouts/notebook';
-import { baseOptions } from '@/lib/layout.shared';
-import { source } from '@/lib/source';
-import type { ReactNode } from 'react';
+import { DocsLayout } from "fumadocs-ui/layouts/notebook";
+import { baseOptions } from "@/lib/layout.shared";
+import { source } from "@/lib/source";
+import type { ReactNode } from "react";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -97,10 +97,10 @@ export default function Layout({ children }: { children: ReactNode }) {
 * The sidebar is shifted downward and focuses only on document hierarchy.
 
 ```tsx title="layout.tsx"
-import { DocsLayout } from 'fumadocs-ui/layouts/notebook';
-import { baseOptions } from '@/lib/layout.shared';
-import { source } from '@/lib/source';
-import type { ReactNode } from 'react';
+import { DocsLayout } from "fumadocs-ui/layouts/notebook";
+import { baseOptions } from "@/lib/layout.shared";
+import { source } from "@/lib/source";
+import type { ReactNode } from "react";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const { nav, ...base } = baseOptions();
@@ -109,7 +109,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <DocsLayout
       {...base}
       tabMode="navbar" // [!code ++]
-      nav={{ ...nav, mode: 'top' }} // [!code ++]
+      nav={{ ...nav, mode: "top" }} // [!code ++]
       tree={source.pageTree}
     >
       {children}

@@ -1,7 +1,7 @@
 ---
-title: 'Code Blocks'
-description: 'Display inline code and code blocks'
-icon: 'Code'
+title: "Code Blocks"
+description: "Display inline code and code blocks"
+icon: "Code"
 ---
 
 ## Basic
@@ -66,8 +66,8 @@ We support some of the [Shiki Transformers](https://shiki.style/packages/transfo
 <div>Fumadocs</div>
 
 // diff styles
-console.log('hewwo'); // [\!code --]
-console.log('hello'); // [\!code ++]
+console.log("hewwo"); // [\!code --]
+console.log("hello"); // [\!code ++]
 ```
 ````
 
@@ -80,8 +80,8 @@ console.log('hello'); // [\!code ++]
 <div>Fumadocs</div>
 
 // diff styles:
-console.log('hewwo'); // [!code --]
-console.log('hello'); // [!code ++]
+console.log("hewwo"); // [!code --]
+console.log("hello"); // [!code ++]
 ```
 
 ### Twoslash Notations
@@ -92,7 +92,7 @@ Learn more about [Twoslash notations](https://twoslash.netlify.app/refs/notation
 type Player = {
   /**
    * The player name
-   * @default 'user'
+   * @default "user"
    */
   name: string;
 };
@@ -114,12 +114,12 @@ console.g;
 // ---cut-start---
 // ---cut-end---
 
-const player: Player = { name: 'Hello World' };
+const player: Player = { name: "Hello World" };
 //    ^?
 ```
 
 ```ts twoslash
-const a = '123';
+const a = "123";
 
 console.log(a);
 //      ^^^
@@ -127,17 +127,17 @@ console.log(a);
 
 ```ts twoslash
 // @errors: 2739
-import { generateFiles } from 'fumadocs-openapi';
+import { generateFiles } from "fumadocs-openapi";
 
 void generateFiles({
-  input: ['./content/docs/api-reference/openapi.yml'],
-  output: './content/docs/api-reference/(generated)',
+  input: [""./content/docs/api-reference/openapi.yml"],
+  output: ""./content/docs/api-reference/(generated)"",
 });
 ```
 
 ```ts twoslash
 // @errors: 2588
-const a = '123';
+const a = "123";
 
 a = 132;
 ```

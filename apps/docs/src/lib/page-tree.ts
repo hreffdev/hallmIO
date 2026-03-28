@@ -1,14 +1,14 @@
-import type { Item, Root } from 'fumadocs-core/page-tree'
-import { flattenTree, getPageTreeRoots } from 'fumadocs-core/page-tree'
+import type { Item, Root } from "fumadocs-core/page-tree"
+import { flattenTree, getPageTreeRoots } from "fumadocs-core/page-tree"
 
-export { flattenTree, getPageTreeRoots } from 'fumadocs-core/page-tree'
+export { flattenTree, getPageTreeRoots } from "fumadocs-core/page-tree"
 
 /**
  * normalize url
  * adapted from: https://github.com/fuma-nama/fumadocs/blob/dev/packages/ui/src/utils/is-active.ts
  */
 export function normalize(url: string) {
-  if (url.length > 1 && url.endsWith('/')) {
+  if (url.length > 1 && url.endsWith("/"")) {
     return url.slice(0, -1)
   }
   return url

@@ -1,31 +1,31 @@
-import { DocsLayout } from 'fumadocs-ui/layouts/notebook'
-import { baseOptions, linkItems, logo } from 'lib/layout.shared'
-import { source } from 'lib/source'
-import 'katex/dist/katex.min.css'
-import type { CSSProperties } from 'react'
+import { DocsLayout } from "fumadocs-ui/layouts/notebook"
+import { baseOptions, linkItems, logo } from "lib/layout.shared"
+import { source } from "lib/source"
+import "katex/dist/katex.min.css"
+import type { CSSProperties } from "react"
 import {
   AISearch,
   AISearchPanel,
   AISearchTrigger,
-} from 'components/fumadocs/ai/search'
+} from "components/fumadocs/ai/search"
 
 const LEADING_DASHES = /^-+/
 const TRAILING_DASHES = /-+$/
 
-export default function Layout({ children }: LayoutProps<'/docs'>) {
+export default function Layout({ children }: LayoutProps<"/docs">) {
   const base = baseOptions()
 
   return (
     <DocsLayout
       {...base}
-      links={linkItems.filter((item) => item.type === 'icon')}
+      links={linkItems.filter((item) => item.type === "icon")}
       nav={{
         ...base.nav,
-        mode: 'top',
+        mode: "top",
         title: (
           <>
             {logo}
-            <span className='font-medium max-md:hidden'>Starter Kit</span>
+            <span className="font-medium max-md:hidden">Starter Kit</span>
           </>
         ),
       }}
@@ -38,7 +38,7 @@ export default function Layout({ children }: LayoutProps<'/docs'>) {
               return option
             }
 
-            const segments = meta.path.split('/')
+            const segments = meta.path.split("/"")
             const segment = serializeSegment(segments[0])
 
             const color = `var(--${segment}-color, var(--color-fd-foreground))`
@@ -46,10 +46,10 @@ export default function Layout({ children }: LayoutProps<'/docs'>) {
               ...option,
               icon: (
                 <div
-                  className='size-full rounded-lg text-(--tab-color) max-md:border max-md:bg-(--tab-color)/10 max-md:p-1.5 [&_svg]:size-full'
+                  className="size-full rounded-lg text-(--tab-color) max-md:border max-md:bg-(--tab-color)/10 max-md:p-1.5 [&_svg]:size-full"
                   style={
                     {
-                      '--tab-color': color,
+                      "--tab-color": color,
                     } as CSSProperties
                   }
                 >
@@ -60,7 +60,7 @@ export default function Layout({ children }: LayoutProps<'/docs'>) {
           },
         },
       }}
-      tabMode='navbar'
+      tabMode="navbar"
       tree={source.pageTree}
     >
       {children}
@@ -74,13 +74,13 @@ export default function Layout({ children }: LayoutProps<'/docs'>) {
 }
 
 function serializeSegment(segment: string | undefined): string {
-  const raw = (segment ?? '').trim()
+  const raw = (segment ?? "").trim()
 
   const kebab = raw
     .toLowerCase()
-    .replace(/[_\s]+/g, '-')
-    .replace(/[^a-z0-9-]/g, '')
-    .replace(LEADING_DASHES, '')
-    .replace(TRAILING_DASHES, '')
-  return kebab || 'fd'
+    .replace(/[_\s]+/g, "-"")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(LEADING_DASHES, "")
+    .replace(TRAILING_DASHES, "")
+  return kebab || "fd"
 }

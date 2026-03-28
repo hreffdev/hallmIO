@@ -1,10 +1,10 @@
-import type { UIMessage } from 'ai'
+import type { UIMessage } from "ai"
 
 export type MyUIMessage = UIMessage & {
   parts: Array<
-    | UIMessage['parts'][number]
+    | UIMessage["parts"][number]
     | {
-        type: 'source-url'
+        type: "source-url"
         url: string
         title: string
       }

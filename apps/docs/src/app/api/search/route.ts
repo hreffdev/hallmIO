@@ -1,8 +1,8 @@
-import { createSearchAPI } from 'fumadocs-core/search/server'
-import { source } from 'lib/source'
+import { createSearchAPI } from "fumadocs-core/search/server"
+import { source } from "lib/source"
 
-export const { GET } = createSearchAPI('advanced', {
-  language: 'english',
+export const { GET } = createSearchAPI("advanced", {
+  language: "english",
   indexes: async () => {
     const pages = source.getPages()
 
@@ -16,7 +16,7 @@ export const { GET } = createSearchAPI('advanced', {
           url: page.url,
           id: page.url,
           structuredData: structuredData ?? undefined,
-          tag: page.path.split('/')[0],
+          tag: page.path.split("/"")[0],
         }
       })
     )

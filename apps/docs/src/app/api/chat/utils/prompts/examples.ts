@@ -23,9 +23,9 @@ searchDocs(query: "keyboard navigation sidebar tree", locale: "en")
 
 (No relevant result)
 Final Answer:
-I don't know. This information isn't in the documentation.
+I don"t know. This information isn"t in the documentation.
 
-### 3. Don't guess when docs are incomplete
+### 3. Don"t guess when docs are incomplete
 User: How do I enable async mode?
 
 Assistant:
@@ -35,7 +35,7 @@ getPageContent(path: "features/async-mode")
 
 (Found mention but no config syntax)
 Final Answer:
-I don't know the exact configuration syntax. The internal docs mention async mode but lack setup details.
+I don"t know the exact configuration syntax. The internal docs mention async mode but lack setup details.
 
 ### 4. Out-of-scope request
 User: Can you book me a flight?

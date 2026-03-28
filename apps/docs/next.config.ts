@@ -1,7 +1,7 @@
 
-import bundleAnalyzer from '@next/bundle-analyzer'
-import { createMDX } from 'fumadocs-mdx/next'
-import type { NextConfig } from 'next'
+import bundleAnalyzer from "@next/bundle-analyzer"
+import { createMDX } from "fumadocs-mdx/next"
+import type { NextConfig } from "next"
 
 async function createNextConfig(): Promise<NextConfig> {
 
@@ -13,43 +13,43 @@ async function createNextConfig(): Promise<NextConfig> {
 			ignoreBuildErrors: true,
 		},
 		serverExternalPackages: [
-			'ts-morph',
-			'typescript',
-			'oxc-transform',
-			'twoslash',
-			'twoslash-protocol',
-			'shiki',
-			'@takumi-rs/image-response',
+			"ts-morph",
+			"typescript",
+			"oxc-transform",
+			"twoslash",
+			"twoslash-protocol",
+			"shiki",
+			"@takumi-rs/image-response",
 		],
 		images: {
 			remotePatterns: [
 				{
-					protocol: 'https',
-					hostname: 'avatars.githubusercontent.com',
-					port: '',
+					protocol: "https",
+					hostname: "avatars.githubusercontent.com",
+					port: "",
 				},
 				{
-					protocol: 'https',
-					hostname: 'hreff.dev',
-					port: '',
+					protocol: "https",
+					hostname: "hreff.dev",
+					port: "",
 				},
 			],
 		},
 		async rewrites() {
 			return [
 				{
-					source: './docs/:path*.mdx',
-					destination: '/llms.mdx/:path*',
-				},
+					source: "./docs/:path*.mdx",
+					destination: "/llms.mdx/:path*"
+				}
 			]
-		},
+		}
 	}
 
 	return nextConfig
 }
 
 const bundleAnalyzerPlugin = bundleAnalyzer({
-	enabled: process.env.ANALYZE === 'true',
+	enabled: process.env.ANALYZE === "true",
 })
 
 const mdxPlugin = createMDX()

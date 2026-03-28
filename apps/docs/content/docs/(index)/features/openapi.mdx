@@ -23,25 +23,25 @@ The official OpenAPI integration supports:
 The `generate-docs` script uses the OpenAPI schema to generate the documentation. You can change the OpenAPI schema by modifying the `openapi.yml` file in `content/docs/api-reference` of your project.
 
 ```ts title="scripts/generate-docs.ts"
-import * as OpenAPI from 'fumadocs-openapi'
-import { rimraf } from 'rimraf'
-import { openapi } from '@/lib/openapi' // [!code highlight]
+import * as OpenAPI from "fumadocs-openapi"
+import { rimraf } from "rimraf"
+import { openapi } from "@/lib/openapi" // [!code highlight]
 
-const out = './content/docs/api-reference/(generated)'
+const out = ""./content/docs/api-reference/(generated)""
 
 export async function generateDocs() {
   await rimraf(out, {
     filter(v) {
-      return !v.endsWith('meta.json')
+      return !v.endsWith("meta.json")
     },
   })
 
   await OpenAPI.generateFiles({
     input: openapi, // [!code highlight]
     output: out,
-    per: 'operation',
+    per: "operation",
     includeDescription: true,
-    groupBy: 'tag',
+    groupBy: "tag",
   })
 }
 ```
@@ -62,19 +62,19 @@ Follow these steps to completely remove the OpenAPI integration from your projec
 
 Comment out the OpenAPI transformer:
 
-```tsx title="src/lib/source.tsx" 
+```tsx title="src/lib/source.tsx"
 import {
   loader,
-} from 'fumadocs-core/source'
-import { docs } from 'fumadocs-mdx:collections/docs'
-import { openapiPlugin } from 'fumadocs-openapi/server' /* [!code --] */
+} from "fumadocs-core/source"
+import { docs } from "fumadocs-mdx:collections/docs"
+import { openapiPlugin } from "fumadocs-openapi/server" /* [!code --] */
 
 export const source = loader({
-  baseUrl: '/docs',
+  baseUrl: "/docs",
   plugins: [
     // ... other plugins
     openapiPlugin() /* [!code --] */
-  ], 
+  ],
   source: docs.toFumadocsSource(),
 })
 ```
@@ -84,11 +84,11 @@ export const source = loader({
 Delete the `src/lib/openapi/index.ts` file:
 
 ```ts twoslash title="src/lib/openapi/index.ts"
-import { createOpenAPI } from 'fumadocs-openapi/server' /* [!code --] */
+import { createOpenAPI } from "fumadocs-openapi/server" /* [!code --] */
 
 export const openapi = createOpenAPI({ /* [!code --] */
-  input: ['./content/docs/api-reference/openapi.yml'], /* [!code --] */
-  proxyUrl: '/api/proxy', /* [!code --] */
+  input: [""./content/docs/api-reference/openapi.yml"], /* [!code --] */
+  proxyUrl: "/api/proxy", /* [!code --] */
 }) /* [!code --] */
 ```
 
@@ -106,7 +106,7 @@ rm -rf content/docs/api-reference
 ```json title="meta.json"
 {
   "pages": [
-    "(index)", 
+    "(index)",
     "api-reference", /* [!code --] */
     "changelog"
   ]
@@ -120,14 +120,14 @@ rm -rf content/docs/api-reference
   <DocumentationItem
     title="Documentation"
     description="Get started with the Fumadocs framework."
-    icon={{ icon: BookIcon, id: '(index)' }}
+    icon={{ icon: BookIcon, id: "(index)"" }}
     href="/docs"
   />
 
   <DocumentationItem  {/* [!code --] */}
     title="API Reference" {/* [!code --] */}
     description="Explore the Fumadocs API reference." {/* [!code --] */}
-    icon={{ icon: WebhookIcon, id: 'api-reference' }} {/* [!code --] */}
+    icon={{ icon: WebhookIcon, id: "api-reference" }} {/* [!code --] */}
     href="/docs/api-reference" {/* [!code --] */}
   /> {/* [!code --] */}
 </div>
@@ -140,20 +140,20 @@ rm -rf content/docs/api-reference
 Remove the OpenAPI generation logic:
 
 ```tsx title="scripts/generate-docs.ts"
-import * as OpenAPI from 'fumadocs-openapi' /* [!code --] */
-import { rimraf } from 'rimraf' /* [!code --] */
-import { openapi } from '@/lib/openapi' /* [!code --] */
+import * as OpenAPI from "fumadocs-openapi" /* [!code --] */
+import { rimraf } from "rimraf" /* [!code --] */
+import { openapi } from "@/lib/openapi" /* [!code --] */
 
 export async function generateDocs() { /* [!code --] */
-  await rimraf('./content/docs/api-reference/(generated)') /* [!code --] */
+  await rimraf(""./content/docs/api-reference/(generated)"") /* [!code --] */
 
   await Promise.all([ /* [!code --] */
     OpenAPI.generateFiles({ /* [!code --] */
       input: openapi,  /* [!code --] */
-      output: './content/docs/api-reference/(generated)',  /* [!code --] */
-      per: 'operation',  /* [!code --] */
+      output: ""./content/docs/api-reference/(generated)"",  /* [!code --] */
+      per: "operation",  /* [!code --] */
       includeDescription: true,  /* [!code --] */
-      groupBy: 'tag', /* [!code --] */
+      groupBy: "tag", /* [!code --] */
     }),  /* [!code --] */
   ]) /* [!code --] */
 } /* [!code --] */
@@ -164,7 +164,7 @@ export async function generateDocs() { /* [!code --] */
 Remove the reference to `generateDocs`:
 
 ```tsx title="scripts/pre-build.ts"
-import { generateDocs } from './generate-docs.js' /* [!code --] */
+import { generateDocs } from ""./generate-docs.js" /* [!code --] */
 
 async function main() {
   // comment the below to disable openapi generation /* [!code ++] */
@@ -185,12 +185,12 @@ Delete the `src/app/api/proxy/route.ts` file.
 Remove the OpenAPI CSS import from `src/styles/globals.css`:
 
 ```css title="src/styles/globals.css"
-@import 'tailwindcss' source(none);
-@import 'fumadocs-ui/css/neutral.css';
-@import 'fumadocs-ui/css/preset.css';
-@import 'fumadocs-twoslash/twoslash.css';
-@import 'fumadocs-openapi/css/preset.css'; /* [!code --] */
-@import 'tw-animate-css';
+@import "tailwindcss" source(none);
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+@import "fumadocs-twoslash/twoslash.css";
+@import "fumadocs-openapi/css/preset.css"; /* [!code --] */
+@import "tw-animate-css";
 ```
 
 
@@ -200,7 +200,7 @@ Remove the OpenAPI CSS import from `src/styles/globals.css`:
 Remove OpenAPI references in `src/mdx-components.tsx`:
 
 ```tsx title="src/mdx-components.tsx"
-import { APIPage } from '@/components/api-page' /* [!code --] */
+import { APIPage } from "@/components/api-page" /* [!code --] */
 
 export function getMDXComponents(components?: MDXComponents) {
   return {

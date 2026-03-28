@@ -1,11 +1,11 @@
-import { z } from 'zod'
+import { z } from "zod"
 
 const KnownAnswerConfidence = z.enum([
-  'very_confident',
-  'somewhat_confident',
-  'not_confident',
-  'no_sources',
-  'other',
+  "very_confident",
+  "somewhat_confident",
+  "not_confident",
+  "no_sources",
+  "other",
 ])
 
 const AnswerConfidence = z.union([KnownAnswerConfidence, z.string()]) // evolvable

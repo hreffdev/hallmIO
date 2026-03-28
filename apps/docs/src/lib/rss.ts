@@ -1,16 +1,16 @@
-import { Feed } from 'feed'
+import { Feed } from "feed"
 import { title } from "./layout.shared"
 import { source } from "./source"
-import { url } from './url'
+import { url } from "./url"
 
 export async function getRSS() {
   const feed = new Feed({
     title,
-    id: url('/rss.xml'),
-    link: url('/rss.xml'),
-    language: 'en',
-    image: url('/banner.png'),
-    favicon: url('/icon.png'),
+    id: url("/rss.xml"),
+    link: url("/rss.xml"),
+    language: "en",
+    image: url("/banner.png"),
+    favicon: url("/icon.png"),
     copyright: `All rights reserved ${new Date().getFullYear()}, ${title}`,
   })
 

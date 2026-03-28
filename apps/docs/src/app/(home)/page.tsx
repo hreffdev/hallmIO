@@ -1,30 +1,30 @@
-import { cn } from '@hallm/ui/lib/utils'
-import { BookIcon, type LucideIcon, WebhookIcon } from 'lucide-react'
-import type { LinkProps } from 'next/link'
-import Link from 'next/link'
-import type { ReactElement, ReactNode } from 'react'
+import { cn } from "@hallm/ui/lib/utils"
+import { BookIcon, type LucideIcon, WebhookIcon } from "lucide-react"
+import type { LinkProps } from "next/link"
+import Link from "next/link"
+import type { ReactElement, ReactNode } from "react"
 
 export default function DocsPage(): ReactElement {
   return (
-    <main className='mx-auto flex w-full max-w-350 flex-col px-4 py-16'>
-      <h1 className='font-semibold text-2xl md:text-3xl'>Official Docs for HallmIO</h1>
-      <p className='mt-1 text-fd-muted-foreground text-lg'>
+    <main className="mx-auto flex w-full max-w-350 flex-col px-4 py-16">
+      <h1 className="font-semibold text-2xl md:text-3xl">Official Docs for HallmIO</h1>
+      <p className="mt-1 text-fd-muted-foreground text-lg">
         A starter-template for Fumadocs.
       </p>
 
-      <div className='mt-8 grid grid-cols-1 gap-4 text-left md:grid-cols-2'>
+      <div className="mt-8 grid grid-cols-1 gap-4 text-left md:grid-cols-2">
         <DocumentationItem
-          description='Get started with the Fumadocs framework.'
-          href='/docs'
-          icon={{ icon: BookIcon, id: '(index)' }}
-          title='Documentation'
+          description="Get started with the Fumadocs framework.""
+          href="/docs"
+          icon={{ icon: BookIcon, id: "(index)"" }}
+          title="Documentation"
         />
 
         <DocumentationItem
-          description="Get started with Fumadocs's API reference feature."
-          href='/docs/api-reference'
-          icon={{ icon: WebhookIcon, id: 'api-reference' }}
-          title='API Reference'
+          description="Get started with Fumadocs"s API reference feature."
+          href="/docs/api-reference"
+          icon={{ icon: WebhookIcon, id: "api-reference" }}
+          title="API Reference"
         />
       </div>
     </main>
@@ -48,10 +48,10 @@ function DocumentationItem({
   return (
     <Item href={href}>
       <Icon className={id}>
-        <ItemIcon className='size-full' />
+        <ItemIcon className="size-full" />
       </Icon>
-      <h2 className='mb-2 font-semibold text-lg'>{title}</h2>
-      <p className='text-fd-muted-foreground text-sm'>{description}</p>
+      <h2 className="mb-2 font-semibold text-lg">{title}</h2>
+      <p className="text-fd-muted-foreground text-sm">{description}</p>
     </Item>
   )
 }
@@ -66,11 +66,11 @@ function Icon({
   return (
     <div
       className={cn(
-        'mb-2 size-9 rounded-lg border p-1.5 shadow-fd-primary/30',
+        "mb-2 size-9 rounded-lg border p-1.5 shadow-fd-primary/30",
         className
       )}
       style={{
-        boxShadow: 'inset 0px 8px 8px 0px var(--tw-shadow-color)',
+        boxShadow: "inset 0px 8px 8px 0px var(--tw-shadow-color)"",
       }}
     >
       {children}
@@ -86,7 +86,7 @@ function Item(
     <Link
       {...rest}
       className={cn(
-        'rounded-2xl border border-border bg-fd-accent/30 p-6 shadow-lg backdrop-blur-lg transition-all hover:bg-fd-accent',
+        "rounded-2xl border border-border bg-fd-accent/30 p-6 shadow-lg backdrop-blur-lg transition-all hover:bg-fd-accent",
         className
       )}
     >

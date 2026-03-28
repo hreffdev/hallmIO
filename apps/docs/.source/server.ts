@@ -28,8 +28,8 @@ import { default as __fd_glob_3 } from "../content/docs/(index)/meta.json?collec
 import { default as __fd_glob_2 } from "../content/docs/api-reference/meta.json?collection=docs"
 import { default as __fd_glob_1 } from "../content/docs/changelog/meta.json?collection=docs"
 import { default as __fd_glob_0 } from "../content/docs/meta.json?collection=docs"
-import { server } from 'fumadocs-mdx/runtime/server';
-import type * as Config from '../source.config';
+import { server } from "fumadocs-mdx/runtime/server";
+import type * as Config from ""../source.config";
 
 const create = server<typeof Config, import("fumadocs-mdx/runtime/types").InternalTypeConfig & {
   DocData: {

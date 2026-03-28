@@ -1,6 +1,6 @@
 ---
 title: Using Custom Themes
-description: 'Learn how to use custom themes in Fumadocs'
+description: "Learn how to use custom themes in Fumadocs"
 icon: Palette
 ---
 
@@ -15,17 +15,17 @@ Fumadocs UI ships with ready-to-use themes and a Tailwind CSS preset.
 Only Tailwind CSS v4 is supported. Import the preset and a theme stylesheet in your `src/styles/globals.css` file:
 
 ```css title="src/styles/globals.css"
-@import 'tailwindcss';
-@import 'fumadocs-ui/css/neutral.css';
-@import 'fumadocs-ui/css/preset.css';
+@import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
 ```
 
-> **Note:** If you're using Shadcn UI, use the `shadcn` preset to have Fumadocs UI adopt your Shadcn theme.
+> **Note:** If you"re using Shadcn UI, use the `shadcn` preset to have Fumadocs UI adopt your Shadcn theme.
 
 ```css title="src/styles/globals.css (shadcn)"
-@import 'tailwindcss';
-@import 'fumadocs-ui/css/shadcn.css';
-@import 'fumadocs-ui/css/preset.css';
+@import "tailwindcss";
+@import "fumadocs-ui/css/shadcn.css";
+@import "fumadocs-ui/css/preset.css";
 ```
 
 ## 2. Preflight Changes
@@ -45,56 +45,56 @@ Light/dark modes are supported via [`next-themes`](https://github.com/pacocourse
 Pick a built-in theme by importing its stylesheet:
 
 ```css title="src/styles/globals.css"
-@import 'tailwindcss';
-@import 'fumadocs-ui/css/<theme>.css';
-@import 'fumadocs-ui/css/preset.css';
+@import "tailwindcss";
+@import "fumadocs-ui/css/<theme>.css";
+@import "fumadocs-ui/css/preset.css";
 ```
 
-<Tabs items={['neutral', 'black', 'vitepress', 'dusk', 'catppuccin', 'ocean', 'purple', 'solar']}>
+<Tabs items={["neutral", "black", "vitepress", "dusk", "catppuccin", "ocean", "purple", "solar"]}>
 
-    <Tab value='neutral'>
+    <Tab value="neutral">
 
 ![Neutral](https://fumadocs.dev/themes/neutral.png)
 
     </Tab>
 
-    <Tab value='black'>
+    <Tab value="black">
 
 ![Black](https://fumadocs.dev/themes/black.png)
 
     </Tab>
 
-    <Tab value='vitepress'>
+    <Tab value="vitepress">
 
 ![Vitepress](https://fumadocs.dev/themes/vitepress.png)
 
     </Tab>
 
-    <Tab value='dusk'>
+    <Tab value="dusk">
 
 ![Dusk](https://fumadocs.dev/themes/dusk.png)
 
     </Tab>
 
-    <Tab value='Catppuccin'>
+    <Tab value="Catppuccin">
 
 ![Catppuccin](https://fumadocs.dev/themes/catppuccin.png)
 
     </Tab>
 
-    <Tab value='ocean'>
+    <Tab value="ocean">
 
 ![Ocean](https://fumadocs.dev/themes/ocean.png)
 
     </Tab>
 
-    <Tab value='purple'>
+    <Tab value="purple">
 
 ![Purple](https://fumadocs.dev/themes/purple.png)
 
     </Tab>
 
-  <Tab value='solar'>
+  <Tab value="solar">
 
     ![Solar](https://fumadocs.dev/themes/solar.png)
 

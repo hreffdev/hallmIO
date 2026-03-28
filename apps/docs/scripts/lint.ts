@@ -1,18 +1,18 @@
-import type { InferPageType, Page} from 'fumadocs-core/source'
+import type { InferPageType, Page} from "fumadocs-core/source"
 import {
 	type FileObject,
 	printErrors,
 	scanURLs,
 	validateFiles,
-} from 'next-validate-link'
-import { source } from 'lib/source'
+} from "next-validate-link"
+import { source } from "lib/source"
 
 type AnySource = typeof source
 
 async function checkLinks() {
 	const scanned = await scanURLs({
 		populate: {
-			'docs/[[...slug]]': await Promise.all(
+			"docs/[[...slug]]"": await Promise.all(
 				source.getPages().map(async (page) => ({
 					value: {
 						slug: page.slugs,
@@ -32,10 +32,10 @@ async function checkLinks() {
 			scanned,
 			markdown: {
 				components: {
-					Card: { attributes: ['href'] },
+					Card: { attributes: ["href"] },
 				},
 			},
-			checkRelativePaths: 'as-url',
+			checkRelativePaths: "as-url",
 		}),
 		true
 	)
@@ -58,7 +58,7 @@ async function getHeadings({
 async function getFiles(docsSource: AnySource) {
 	const files: FileObject[] = []
 	for (const page of docsSource.getPages()) {
-		if ('type' in page.data && page.data.type === 'openapi') {
+		if ("type" in page.data && page.data.type === "openapi") {
 			continue
 		}
 
@@ -66,7 +66,7 @@ async function getFiles(docsSource: AnySource) {
 			data: page.data,
 			url: page.url,
 			path: page.data.fullPath,
-			content: await page.data.getText('raw'),
+			content: await page.data.getText("raw"),
 		})
 	}
 

@@ -1,4 +1,4 @@
-import env from '@next/env'
+import env from "@next/env"
 
 env.loadEnvConfig(process.cwd())
 
@@ -8,6 +8,6 @@ async function main() {
 }
 
 await main().catch((e) => {
-  console.error('Failed to run post build script', e)
+  console.error("Failed to run post build script", e)
   process.exit(1)
 })

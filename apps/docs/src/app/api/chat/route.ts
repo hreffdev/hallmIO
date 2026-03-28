@@ -1,5 +1,5 @@
 import { getLLMsTxt } from ""
-import { openai } from '@ai-sdk/openai'
+import { openai } from "@ai-sdk/openai"
 import {
   convertToModelMessages,
   createUIMessageStream,
@@ -9,12 +9,12 @@ import {
   smoothStream,
   stepCountIs,
   streamText,
-} from 'ai'
+} from "ai"
 import { env } from "../../env"
 import type { MyUIMessage } from "./"
-import { systemPrompt } from './utils/prompts'
-import { getPageContent } from './utils/tools/get-page-content'
-import { createSearchDocsTool } from './utils/tools/search-docs'
+import { systemPrompt } from ""./utils/prompts"
+import { getPageContent } from ""./utils/tools/get-page-content"
+import { createSearchDocsTool } from ""./utils/tools/search-docs"
 
 export async function POST(request: Request) {
   try {
@@ -25,21 +25,21 @@ export async function POST(request: Request) {
     } = await request.json()
 
     const handleStreamError = (error: unknown) => {
-      if (env.NODE_ENV !== 'production') {
-        console.error('An error occurred:', {
+      if (env.NODE_ENV !== "production") {
+        console.error("An error occurred:"", {
           name: (error as Error).name,
           message: (error as Error).message,
         })
       }
 
       if (NoSuchToolError.isInstance(error)) {
-        return 'The model tried to call an unknown tool.'
+        return "The model tried to call an unknown tool.""
       }
       if (InvalidToolInputError.isInstance(error)) {
-        return 'The model called a tool with invalid arguments.'
+        return "The model called a tool with invalid arguments.""
       }
 
-      return 'An unknown error occurred.'
+      return "An unknown error occurred.""
     }
 
     const stream = createUIMessageStream({
@@ -49,14 +49,14 @@ export async function POST(request: Request) {
           ignoreIncompleteToolCalls: true,
         })
         const result = streamText({
-          model: openai('gpt-5-mini'),
+          model: openai("gpt-5-mini"),
           system: systemPrompt({ llms: getLLMsTxt() }),
           providerOptions: {
             openai: {
-              reasoningEffort: 'minimal',
-              reasoningSummary: 'auto',
-              textVerbosity: 'medium',
-              serviceTier: 'priority',
+              reasoningEffort: "minimal",
+              reasoningSummary: "auto",
+              textVerbosity: "medium",
+              serviceTier: "priority",
             },
           },
           tools: {
@@ -64,14 +64,14 @@ export async function POST(request: Request) {
             getPageContent,
           },
           messages: modelMessages,
-          toolChoice: 'auto',
+          toolChoice: "auto",
           experimental_transform: smoothStream({
             delayInMs: 20,
-            chunking: 'line',
+            chunking: "line",
           }),
           stopWhen: stepCountIs(15),
           onStepFinish: ({ toolResults }) => {
-            if (env.NODE_ENV !== 'production') {
+            if (env.NODE_ENV !== "production") {
               console.log(
                 `Step Results: ${JSON.stringify(toolResults, null, 2)}`
               )
@@ -89,14 +89,14 @@ export async function POST(request: Request) {
 
     return createUIMessageStreamResponse({ stream })
   } catch (error) {
-    if (env.NODE_ENV !== 'production') {
-      console.error('Failed to process chat request:', {
+    if (env.NODE_ENV !== "production") {
+      console.error("Failed to process chat request:"", {
         name: (error as Error).name,
         message: (error as Error).message,
       })
     }
 
-    return new Response('Failed to process chat request.', {
+    return new Response("Failed to process chat request."", {
       status: 500,
     })
   }

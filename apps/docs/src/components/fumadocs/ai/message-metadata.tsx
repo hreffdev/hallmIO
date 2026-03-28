@@ -1,5 +1,5 @@
 import { Spinner } from "@hallm/ui/components/base/spinner"
-import { isToolUIPart } from 'ai'
+import { isToolUIPart } from "ai"
 import type { MyUIMessage } from "../api/chat/"
 import {
 	Brain,
@@ -7,7 +7,7 @@ import {
 	LinkIcon,
 	SearchIcon,
 	WrenchIcon,
-} from 'lucide-react'
+} from "lucide-react"
 import { Shimmer } from "./shimmer"
 import {
 	Source,
@@ -17,7 +17,7 @@ import {
 } from "./sources"
 
 interface MessageMetadataProps {
-	parts: MyUIMessage['parts']
+	parts: MyUIMessage["parts"]
 	inProgress: boolean
 }
 
@@ -27,17 +27,17 @@ export const MessageMetadata = ({
 }: MessageMetadataProps) => {
 	// Pull out last part that is either text or tool call
 	const lastPart = parts
-		.filter((part) => part.type === 'text' || isToolUIPart(part))
+		.filter((part) => part.type === "text" || isToolUIPart(part))
 		.at(-1)
 
-	const reasoning = parts.at(-1)?.type === 'reasoning'
+	const reasoning = parts.at(-1)?.type === "reasoning"
 
 	if (!lastPart) {
 		return (
-			<div className='flex items-center gap-2'>
+			<div className="flex items-center gap-2">
 				{reasoning ? (
 					<>
-						<Brain className='size-4' />
+						<Brain className="size-4" />
 						<Shimmer>Thinking...</Shimmer>
 					</>
 				) : (
@@ -52,25 +52,25 @@ export const MessageMetadata = ({
 	const sources = Array.from(
 		new Map(
 			parts
-				.filter((part) => part.type === 'source-url')
+				.filter((part) => part.type === "source-url")
 				.map((part) => [part.url, part])
 		).values()
 	)
 
 	if (sources.length > 0 && !(tool && inProgress)) {
 		return (
-			<Sources className='group/source peer/source'>
+			<Sources className="group/source peer/source">
 				<SourcesTrigger count={sources.length}>
-					<span className='relative size-4'>
-						<SearchIcon className='absolute inset-0 size-4 transition-opacity duration-200 group-hover/source:opacity-0' />
-						<ChevronDownIcon className='absolute inset-0 size-4 opacity-0 transition-all duration-200 group-hover/source:opacity-100 peer-data-[state=open]/source:rotate-180' />
+					<span className="relative size-4">
+						<SearchIcon className="absolute inset-0 size-4 transition-opacity duration-200 group-hover/source:opacity-0" />
+						<ChevronDownIcon className="absolute inset-0 size-4 opacity-0 transition-all duration-200 group-hover/source:opacity-100 peer-data-[state=open]/source:rotate-180" />
 					</span>
 					<p>Used {sources.length} sources</p>
 				</SourcesTrigger>
 				<SourcesContent>
-					<ul className='flex flex-col gap-2'>
+					<ul className="flex flex-col gap-2">
 						{sources.map((source) => (
-							<li className='ml-4.5 list-disc pl-1' key={source.url}>
+							<li className="ml-4.5 list-disc pl-1" key={source.url}>
 								<Source href={source.url} title={source.url}>
 									{source.title ?? source.url}
 								</Source>
@@ -84,20 +84,20 @@ export const MessageMetadata = ({
 
 	if (tool && inProgress) {
 		let Icon = WrenchIcon
-		let label = 'Working'
+		let label = "Working"
 		const name = tool.type
-			.replace('tool-', '')
-			.replace(/([A-Z])/g, ' $1')
+			.replace("tool-"", "")
+			.replace(/([A-Z])/g, "" $1")
 			.trim()
 
 		switch (tool.type) {
-			case 'tool-searchDocs':
+			case "tool-searchDocs":
 				Icon = SearchIcon
-				label = 'Searching docs'
+				label = "Searching docs"
 				break
-			case 'tool-getPageContent':
+			case "tool-getPageContent":
 				Icon = LinkIcon
-				label = 'Fetching page'
+				label = "Fetching page"
 				break
 			default:
 				label = `Running ${name}`
@@ -105,8 +105,8 @@ export const MessageMetadata = ({
 		}
 
 		return (
-			<div className='flex animate-pulse items-center gap-2 text-muted-foreground'>
-				<Icon className='size-4' />
+			<div className="flex animate-pulse items-center gap-2 text-muted-foreground">
+				<Icon className="size-4" />
 				<Shimmer>{label}</Shimmer>
 			</div>
 		)
@@ -116,5 +116,5 @@ export const MessageMetadata = ({
 		return null
 	}
 
-	return <div className='h-12' />
+	return <div className="h-12" />
 }
